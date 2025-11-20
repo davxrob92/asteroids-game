@@ -8,6 +8,8 @@ VERSION = pygame.version.ver
 def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    clock = pygame.time.Clock()
+    dt = 0
 
     print(f"Starting Asteroids! with pygame version: {VERSION}")
     print(f"Screen width: {SCREEN_WIDTH}")
@@ -23,6 +25,8 @@ def main():
             
         screen.fill("black")
         pygame.display.flip()
+        ms_since_last_frame = clock.tick(60)
+        dt = ms_since_last_frame / 1000
 
 if __name__ == "__main__":
     main()
