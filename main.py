@@ -6,6 +6,7 @@ from asteroid import Asteroid
 from asteroidfield import AsteroidField
 from logger import log_event
 import sys
+from shot import Shot
 
 
 VERSION = pygame.version.ver
@@ -28,7 +29,8 @@ def main():
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     AsteroidField.containers = (updatable)
     AsteroidField()
-    print("Asteroid class:", Asteroid, "from module:", Asteroid.__module__)
+    shots = pygame.sprite.Group()
+    Shot.containers = (shots, updatable, drawable)
 
     while True:
         log_state()
