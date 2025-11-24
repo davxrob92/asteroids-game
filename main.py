@@ -45,8 +45,6 @@ def main():
                 print("Game over!")
                 sys.exit()
             
-
-
         screen.fill("black")
 
         for obj in drawable:
@@ -56,9 +54,6 @@ def main():
         ms_since_last_frame = clock.tick(60)
         dt = ms_since_last_frame / 1000
         
-
-    
-
 if __name__ == "__main__":
     main()
 
